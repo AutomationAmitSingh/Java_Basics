@@ -26,6 +26,9 @@ package logical_snippets;
 	Exception in thread "main" java.lang.ClassCastException: logical_snippets.Parent cannot be cast to logical_snippets.Children
 	at logical_snippets.Children.main(Children.java:83)
  *  
+ *  If a super class method is overridden in sub class then up cast reference will use overridden method without downcast.
+ *  
+ *  Static method cannot be overridden in Child class from Parent class 
  */
 
 class Parent
@@ -41,6 +44,11 @@ class Parent
 		System.out.println("<---Inside parent show method--->");
 	}
 	
+	public void print() 
+	{
+		System.out.println("<---Inside parent print method overriding--->");
+	}
+	
 }
 
 public class Children extends Parent {
@@ -54,6 +62,11 @@ public class Children extends Parent {
 	{
 		System.out.println("<---Inside child show method--->");
 	}
+	
+	public void print() 
+	{
+		System.out.println("<---Inside child print method overriding--->");
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -66,6 +79,7 @@ public class Children extends Parent {
 		c.parent_Show();
 		((Children) c).child_Print();
 		((Children) c).child_Show();
+		c.print();
 		
 		Children c2 = (Children) c;
 		c2.parent_Print();
