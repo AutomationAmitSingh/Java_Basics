@@ -45,6 +45,29 @@ public class MapsPractice {
 			System.out.println(key+" : "+value);
 			
 		}
+		
+		// Linked Hash Map Creation Maintain the order of insertion
+		Map<String, Integer> lhm = new LinkedHashMap<String, Integer>();
+		lhm.put("Z", 1000);
+		lhm.put("A", 500);
+		lhm.put("F", 3000);
+		
+		for(Map.Entry<String, Integer> me : lhm.entrySet())		
+		{
+			System.out.println(me.getKey()+" : "+me.getValue());
+		}
+		
+		// Tree map sort based on natural order of the key
+		Map<Integer, String> tm = new TreeMap<Integer, String>();
+		tm.put(10, "Amit");
+		tm.put(50, "Singh");
+		tm.put(35, "Testing");
+		
+		for(Map.Entry<Integer, String> me : tm.entrySet()) 
+		{
+			System.out.println(me.getKey()+" : "+me.getValue());
+		}
+		
 
 	}
 
